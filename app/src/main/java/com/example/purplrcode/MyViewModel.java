@@ -32,11 +32,11 @@ public class MyViewModel extends AndroidViewModel {
         super(application);
         this.handle = handle;
         if (!handle.contains(keyStu) & !handle.contains(keyName) & !handle.contains(keyClass) & !handle.contains(keyUri)) {
-            //SharedPreferences shp = getApplication().getSharedPreferences(shpName, Context.MODE_PRIVATE);
-            handle.set(keyName,"52486 雷姆");
-            handle.set(keyClass,"露格尼卡/罗兹瓦尔宅邸");
-            handle.set(keyStu,"本科生");
-            handle.set(keyUri,rem);
+            SharedPreferences shp = getApplication().getSharedPreferences(shpName, Context.MODE_PRIVATE);
+            handle.set(keyName,shp.getString(keyName,"52486 雷姆"));
+            handle.set(keyClass,shp.getString(keyClass,"露格尼卡/罗兹瓦尔宅邸"));
+            handle.set(keyStu,shp.getString(keyStu,"本科生"));
+            handle.set(keyUri,shp.getString(keyUri,rem));
         }
 
     }
@@ -56,10 +56,10 @@ public class MyViewModel extends AndroidViewModel {
     void save() {
         SharedPreferences shp = getApplication().getSharedPreferences(shpName, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor =shp.edit();
-        editor.putString(keyName,getMyName().toString());
-        editor.putString(keyClass,getMyClass().toString());
-        editor.putString(keyStu,getStu().toString());
-        editor.putString(keyUri,getUri().toString());
+        editor.putString(keyName,getMyName().getValue());
+        editor.putString(keyClass,getMyClass().getValue());
+        editor.putString(keyStu,getStu().getValue());
+        editor.putString(keyUri,getUri().getValue());
         editor.apply();
     }
     public void submit(String name, String gradeClass, String stu) {

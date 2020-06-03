@@ -44,7 +44,7 @@ public class CodeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
+        mViewModel = new ViewModelProvider(requireActivity(), new SavedStateViewModelFactory(getActivity().getApplication(), this)).get(MyViewModel.class);
 //        CodeFragmentBinding binding;
 //        binding = DataBindingUtil.inflate(inflater, R.layout.code_fragment, container, false);
 //        binding.setData(mViewModel);
@@ -58,7 +58,7 @@ public class CodeFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(requireActivity(), new SavedStateViewModelFactory(getActivity().getApplication(), this)).get(MyViewModel.class);
+
         // TODO: Use the ViewModel
         imageViewIcon = requireActivity().findViewById(R.id.imageViewIcon);
         textViewTime = requireActivity().findViewById(R.id.textViewTime);
@@ -133,4 +133,5 @@ public class CodeFragment extends Fragment {
             return false;
         }
     });
+
 }

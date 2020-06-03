@@ -85,7 +85,7 @@ public class OutFragment extends Fragment {
                 String stu = editTextStu.getText().toString().trim();
 
                 mViewModel.submit(name,gradeClass,stu);
-                //mViewModel.save();
+                mViewModel.save();
 
                 NavController navController = Navigation.findNavController(v);
                 navController.navigateUp();
