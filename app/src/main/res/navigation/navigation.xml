@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/codeFragment">
+
+    <fragment
+        android:id="@+id/codeFragment"
+        android:name="com.example.purplrcode.CodeFragment"
+        android:label="交大校园码"
+        tools:layout="@layout/code_fragment" />
+    <fragment
+        android:id="@+id/backFragment"
+        android:name="com.example.purplrcode.BackFragment"
+        android:label="返校申请"
+        tools:layout="@layout/back_fragment" />
+    <fragment
+        android:id="@+id/outFragment"
+        android:name="com.example.purplrcode.OutFragment"
+        android:label="外出申请"
+        tools:layout="@layout/out_fragment" />
+    <fragment
+        android:id="@+id/transferFragment"
+        android:name="com.example.purplrcode.TransferFragment"
+        android:label="转码申请"
+        tools:layout="@layout/transfer_fragment" />
+</navigation>

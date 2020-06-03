@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/codeFragment"
+        android:icon="@drawable/ic_baseline_assignment_24"
+        android:title="交大校园码" />
+    <item
+        android:id="@+id/backFragment"
+        android:icon="@drawable/ic_baseline_assignment_24"
+        android:title="返校申请" />
+    <item
+        android:id="@+id/outFragment"
+        android:icon="@drawable/ic_baseline_assignment_24"
+        android:title="外出申请" />
+    <item
+        android:id="@+id/transferFragment"
+        android:icon="@drawable/ic_baseline_assignment_24"
+        android:title="转码申请" />
+</menu>

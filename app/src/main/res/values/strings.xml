@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">移动交通太学</string>
+    <string name="MY_KEY_NAME">My_Key_Name</string>
+    <string name="MY_KEY_CLASS">My_Key_Class</string>
+    <string name="MY_KEY_STU">My_Key_Stu</string>
+    <string name="MY_DATA">My_Data</string>
+</resources>
