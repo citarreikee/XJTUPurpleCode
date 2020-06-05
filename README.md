@@ -9,3 +9,5 @@
 #第二版purplecode2.apk可以永久保存你的编辑状态，建议使用~
 
 #为了保护个人隐私，version-3替换了我的个人二维码，前两个版本apk已移除，请直接使用purplecode3.apk
+
+#感谢Live4dreamCH同学的反馈，程序已升级至第四版

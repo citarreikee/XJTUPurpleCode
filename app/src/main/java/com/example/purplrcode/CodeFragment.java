@@ -45,12 +45,12 @@ public class CodeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         mViewModel = new ViewModelProvider(requireActivity(), new SavedStateViewModelFactory(getActivity().getApplication(), this)).get(MyViewModel.class);
-//        CodeFragmentBinding binding;
-//        binding = DataBindingUtil.inflate(inflater, R.layout.code_fragment, container, false);
-//        binding.setData(mViewModel);
-//        binding.setLifecycleOwner(requireActivity());
-        return inflater.inflate(R.layout.code_fragment, container, false);
-        //return binding.getRoot();
+        CodeFragmentBinding binding;
+        binding = DataBindingUtil.inflate(inflater, R.layout.code_fragment, container, false);
+        binding.setData(mViewModel);
+        binding.setLifecycleOwner(requireActivity());
+        //return inflater.inflate(R.layout.code_fragment, container, false);
+        return binding.getRoot();
 
 
     }
@@ -60,45 +60,45 @@ public class CodeFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         // TODO: Use the ViewModel
-        imageViewIcon = requireActivity().findViewById(R.id.imageViewIcon);
+        //imageViewIcon = requireActivity().findViewById(R.id.imageViewIcon);
         textViewTime = requireActivity().findViewById(R.id.textViewTime);
         textViewDate = requireActivity().findViewById(R.id.textViewDate);
-        textViewName = requireActivity().findViewById(R.id.textViewName);
-        textViewClass = requireActivity().findViewById(R.id.textViewClass);
-        textViewStu1 = requireActivity().findViewById(R.id.textViewStu1);
-        textViewStu2 = requireActivity().findViewById(R.id.textViewStu2);
+//        textViewName = requireActivity().findViewById(R.id.textViewName);
+//        textViewClass = requireActivity().findViewById(R.id.textViewClass);
+//        textViewStu1 = requireActivity().findViewById(R.id.textViewStu1);
+//        textViewStu2 = requireActivity().findViewById(R.id.textViewStu2);
 
         textViewTime.setText(timer.getNowTime());
         textViewDate.setText(timer.getNowDateTime());
         new TimeThread().start();
-        mViewModel.getUri().observe(getActivity(), new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                uri = Uri.parse(s);
-                imageViewIcon.setImageURI(uri);
-            }
-        });
-        mViewModel.getMyName().observe(getActivity(), new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                textViewName.setText(s);
-                Log.d(ACTIVITY_TAG, "onChanged: "+s);
-            }
-        });
-        mViewModel.getMyClass().observe(getActivity(), new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                textViewClass.setText(s);
-
-            }
-        });
-        mViewModel.getStu().observe(getActivity(), new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                textViewStu1.setText(s);
-                textViewStu2.setText(s);
-            }
-        });
+//        mViewModel.getUri().observe(getActivity(), new Observer<String>() {
+//            @Override
+//            public void onChanged(String s) {
+//                uri = Uri.parse(s);
+//                imageViewIcon.setImageURI(uri);
+//            }
+//        });
+//        mViewModel.getMyName().observe(getActivity(), new Observer<String>() {
+//            @Override
+//            public void onChanged(String s) {
+//                textViewName.setText(s);
+//
+//            }
+//        });
+//        mViewModel.getMyClass().observe(getActivity(), new Observer<String>() {
+//            @Override
+//            public void onChanged(String s) {
+//                textViewClass.setText(s);
+//
+//            }
+//        });
+//        mViewModel.getStu().observe(getActivity(), new Observer<String>() {
+//            @Override
+//            public void onChanged(String s) {
+//                textViewStu1.setText(s);
+//                textViewStu2.setText(s);
+//            }
+//        });
 
 
     }

@@ -87,7 +87,7 @@ public class BackFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mViewModel.setUri(uri);
-                //mViewModel.save();
+                mViewModel.save();
 
                 NavController navController = Navigation.findNavController(v);
                 navController.navigateUp();
